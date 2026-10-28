@@ -2,13 +2,13 @@
 
 ### Planejar, criar e testar um banco de dados para um domínio qualquer.
 
-# 🎧 NOIR
+#  NOIR
 
 **Banco de Dados para uma Plataforma de Streaming Musical**
 
 ------------------------------------------------------------------------
 
-## 📌 1. Contextualização
+##  1. Contextualização
 
 O **NOIR** é um projeto de banco de dados para uma plataforma fictícia
 de streaming musical. O sistema organiza informações sobre usuários,
@@ -19,7 +19,7 @@ O projeto utiliza um banco de dados relacional desenvolvido em MySQL,
 com o propósito de manter as informações estruturadas, facilitar
 consultas e garantir maior consistência dos dados.
 
-## ⚠️ 2. Problemas sem um Banco de Dados
+##  2. Problemas sem um Banco de Dados
 
 Sem um Sistema Gerenciador de Banco de Dados (SGBD) relacional, a
 plataforma poderia enfrentar problemas como:
@@ -34,7 +34,7 @@ plataforma poderia enfrentar problemas como:
 -   **Manutenção complicada:** dificuldade para atualizar e administrar
     os dados.
 
-## ✅ 3. Melhorias com um Banco de Dados Relacional
+##  3. Melhorias com um Banco de Dados Relacional
 
 Com o uso do MySQL, o NOIR passa a contar com uma estrutura organizada e
 integrada, proporcionando:
@@ -50,7 +50,7 @@ integrada, proporcionando:
 -   **Manutenção facilitada:** maior controle sobre os dados
     armazenados.
 
-## 🗄️ 4. Estrutura do Banco de Dados
+##  4. Estrutura do Banco de Dados
 
 O banco de dados NOIR é composto por **13 tabelas**, cada uma
 responsável por armazenar um conjunto específico de informações.
