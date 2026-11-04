@@ -473,35 +473,7 @@ No **MySQL Workbench**: *Server → Data Import → Import from Self-Contained F
 
 ---
 
-## 🔧 8. Observações técnicas e melhorias
-
-Pontos observados ao conferir os scripts. Servem como **próximos passos** do projeto.
-
-| # | Observação | Sugestão |
-|---|---|---|
-| 1 | `artista_genero`, `playlist_musica` e `favoritos` têm chave primária composta, mas **sem `FOREIGN KEY`** declarada. | Adicionar as FKs para o banco impedir ids inexistentes. |
-| 2 | `musicas.id_album` e `historico_reproducao.id_usuario` **não têm FK** declarada. | Criar FK para `albuns` (`ON DELETE SET NULL`) e para `usuarios`. |
-| 3 | `usuarios.email` **não é único**: o mesmo e-mail pode ser cadastrado várias vezes. | `ALTER TABLE usuarios ADD UNIQUE (email);` |
-| 4 | `usuarios.senha` é `CHAR(50)` e guarda a senha como foi enviada. | Em uma aplicação real, gravar um *hash* (ex.: bcrypt), nunca a senha pura. |
-| 5 | A FK de `historico_reproducao` → `musicas` usa o comportamento padrão (restringe). | Avaliar se excluir uma música deve ser bloqueado (atual) ou apagar o histórico. |
-
-Exemplo de como aplicar as melhorias 1 a 3:
-
-```sql
-ALTER TABLE artista_genero
-  ADD CONSTRAINT fk_artista_genero_artistas FOREIGN KEY (id_artista) REFERENCES artistas (id_artista) ON DELETE CASCADE,
-  ADD CONSTRAINT fk_artista_genero_generos  FOREIGN KEY (id_genero)  REFERENCES generos  (id_genero)  ON DELETE CASCADE;
-
-ALTER TABLE musicas
-  ADD CONSTRAINT fk_musicas_albuns FOREIGN KEY (id_album) REFERENCES albuns (id_album) ON DELETE SET NULL;
-
-ALTER TABLE usuarios
-  ADD CONSTRAINT uk_usuarios_email UNIQUE (email);
-```
-
----
-
-## 🏁 9. Conclusão
+## 🏁 8. Conclusão
 
 O **NOIR** mostra como um banco relacional organiza uma plataforma de streaming musical. Com **13 tabelas**, o modelo cobre usuários, artistas, gêneros, redes sociais, álbuns, músicas, playlists, favoritos e histórico de reprodução.
 
