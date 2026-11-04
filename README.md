@@ -24,8 +24,7 @@
 5. [Normalização](#-5-normalização)
 6. [Consultas SQL](#-6-consultas-sql)
 7. [Como executar](#-7-como-executar)
-8. [Observações técnicas e melhorias](#-8-observações-técnicas-e-melhorias)
-9. [Conclusão](#-9-conclusão)
+8. [Conclusão](#-8-conclusão)
 
 ---
 
